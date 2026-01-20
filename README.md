@@ -15,3 +15,5 @@ MongoDB y mostrando información en una aplicación web.
 - Predicción simple del nivel del agua
 - Semáforo de alerta
 - Visualización en mapas y gráficas
+
+https://maxxcizo.github.io/IoT-FloodingAlert-Project/
