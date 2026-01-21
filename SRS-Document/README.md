@@ -11,8 +11,8 @@ El objetivo principal del SRS es:
 - Facilitar la comunicación entre usuarios, desarrolladores y evaluadores
 - Establecer una referencia clara antes de cualquier implementación
 
-⚠️ **Nota:** Este trabajo es **puramente documental y teórico**.  
-No incluye código ni una implementación funcional del sistema.
+⚠️ **Nota:** Este trabajo es **más que nada documental y teórico**.  
+Esta basado en un código previo pero incompleto a este documento.
 
 ### 🧠 Contenido principal
 - Introducción y propósito del sistema
@@ -37,8 +37,8 @@ The main purpose of the SRS is to:
 - Improve communication between stakeholders
 - Provide a clear reference before implementation begins
 
-⚠️ **Note:** This is a **purely theoretical and documentation-based project**.  
-It does not include source code or a functional software implementation.
+⚠️ **Note**: This work is **primarily documentary and theoretical.**
+It is based on a previous piece of code that is incomplete relative to this document.
 
 ### 🧠 Main Contents
 - System introduction and purpose
