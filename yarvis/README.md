@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# Sistema de Monitoreo de Inundaciones
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Proyecto académico que utiliza una Raspberry Pi con sensores
+para medir nivel de agua y humedad, almacenando los datos en
+MongoDB y mostrando información en una aplicación web.
 
-## Get started
+## Tecnologías
+- Python
+- Raspberry Pi
+- MongoDB
+- HTML/CSS/JS
 
-1. Install dependencies
+## Funcionalidad
+- Lectura de sensores
+- Predicción simple del nivel del agua
+- Semáforo de alerta
+- Visualización en mapas y gráficas
 
-   ```bash
-   npm install
-   ```
+https://maxxcizo.github.io/IoT-FloodingAlert-Project/
 
-2. Start the app
+# Flood Monitoring System
 
-   ```bash
-   npx expo start
-   ```
+Academic project that uses a Raspberry Pi with sensors
+to measure water level and humidity, storing the data in
+MongoDB and displaying information in a web application.
 
-In the output, you'll find options to open the app in a
+## Technologies
+- Python
+- Raspberry Pi
+- MongoDB
+- HTML/CSS/JS
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Functionality
+- Sensor reading
+- Simple water level prediction
+- Alert traffic light
+- Visualization on maps and charts
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+https://maxxcizo.github.io/IoT-FloodingAlert-Project/
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
