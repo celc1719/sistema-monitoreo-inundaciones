@@ -1,0 +1,188 @@
+#---------------------------------------------
+# Evidencia 1 Análisis de SARS-CoV-2 en diferentes variantes - R
+#       Carlos Lopez Lopez Cuevas
+#                A01640751
+#-------------------------------------------
+
+#---------------------
+#Bibliotecas usadas:
+#- seqinr
+#- ape
+#- ggplot2
+#--------------------
+
+#install.packages("seqinr")
+#install.packages("ape")
+#install.packages("ggplot2")
+
+library(ggplot2)
+library(seqinr)
+library(ape)
+
+#Directorio de trabajo
+setwd("C:/Users/celc1/Downloads/SARS_CoV_2_Especies")
+getwd()
+
+#Secuencias (FASTA)
+Al <- read.fasta("Alpha.fna")
+Be <- read.fasta("beta.fna")
+B9 <- read.fasta("BJ01_p9.fasta")
+De <- read.fasta("Delta.fna")
+Ga <- read.fasta("Gamma.fna")
+EM <- read.fasta("HCoV_EMC2012.fasta")
+NLH <- read.fasta("HCoV_NL63H.fasta")
+NLT <- read.fasta("HCoV_NL63T.fasta")
+OCM <- read.fasta("HCoV_OC432254M.fasta")
+OC2 <- read.fasta("HCoV_OC432652.fasta")
+H19 <- read.fasta("hCov_19.fasta")
+C22 <- read.fasta("HCov_229E.fasta")
+HK <- read.fasta("HCoV_HKU1.fasta")
+NLR <- read.fasta("hCoV_NL63R.fasta")
+OCS <- read.fasta("HCoV_OC43S.fasta")
+HNL <- read.fasta("Human_Coronavirus_NL63.fasta")
+MV <- read.fasta("MERS_CoV.fasta")
+Om <- read.fasta("Omicron.fna")
+SC2 <- read.fasta("SARS_CoV_2.fasta")
+OC4 <- read.fasta("HCoV_OC43.fasta")
+
+#--------------------
+# 1.Calcular las longitudes
+#------------------
+longitudes <- c(
+  length(Al[[1]]),
+  length(Be[[1]]),
+  length(B9[[1]]),
+  length(De[[1]]),
+  length(Ga[[1]]),
+  length(EM[[1]]),
+  length(NLH[[1]]),
+  length(NLT[[1]]),
+  length(OCM[[1]]),
+  length(OC2[[1]]),
+  length(H19[[1]]),
+  length(C22[[1]]),
+  length(HK[[1]]),
+  length(NLR[[1]]),
+  length(OCS[[1]]),
+  length(HNL[[1]]),
+  length(MV[[1]]),
+  length(Om[[1]]),
+  length(SC2[[1]]),
+  length(OC4[[1]])
+)
+
+nombres <- c(
+  "Alpha", "Beta", "BJ01_p9", "Delta", "Gamma", "HCoV_EMC2012", "HCoV_NL63H", "HCoV_NL63T",
+  "HCoV_OC432254M", "HCoV_OC432652", "hCov_19", "HCov_229E", "HCoV_HKU1", "hCoV_NL63R",
+  "HCoV_OC43S", "Human_Coronavirus_NL63", "MERS_CovV", "Omicron", "SARS_CoV_2", "HCoV_OC43"
+)
+
+#Mostrar las longitudes en tabla
+longitudes_df <- data.frame(Variante = nombres, Longitud = longitudes)
+print(longitudes_df)
+
+# -------------------
+# 2.Crear una sola gráfica para comparar número de bases
+# ---------------------
+
+#función para contar bases
+contar_bases <- function(secuencia) {
+  tabla <- table(tolower(secuencia[[1]]))
+  return(tabla[c("a", "c", "g", "t")])
+}
+
+# Crear un data frame con las cuentas
+bases_df <- data.frame(
+  Variante = rep(nombres, each = 4),
+  Base = rep(c("Adenina", "Citosina", "Guanina", "Timina"), times = 20),
+  Conteo = c(
+    contar_bases(Al),
+    contar_bases(Be),
+    contar_bases(B9),
+    contar_bases(De),
+    contar_bases(Ga),
+    contar_bases(EM),
+    contar_bases(NLH),
+    contar_bases(NLT),
+    contar_bases(OCM),
+    contar_bases(OC2),
+    contar_bases(H19),
+    contar_bases(C22),
+    contar_bases(HK),
+    contar_bases(NLR),
+    contar_bases(OCS),
+    contar_bases(HNL),
+    contar_bases(MV),
+    contar_bases(Om),
+    contar_bases(SC2),
+    contar_bases(OC4)
+  )
+)
+
+# Gráfica de bases
+ggplot(bases_df, aes(x = Variante, y = Conteo, fill = Base)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Comparación de bases de ADN entre variantes",
+    x = "Variante del Virus",
+    y = "Número de Bases",
+    fill = "Base"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+# ---------------------
+# 3.Análisis jerárquico global
+# -------------------
+
+#Crear matriz de frecuencias
+frecuencia_bases <- function(secuencia) {
+  tabla <- table(secuencia[[1]])
+  bases <- c("a", "c", "g", "t")
+  frec <- sapply(bases, function(b) ifelse(b %in% names(tabla), tabla[[b]], 0))
+  return(frec)
+}
+
+matriz_frecuencias <- rbind(
+  frecuencia_bases(Al),
+  frecuencia_bases(Be),
+  frecuencia_bases(B9),
+  frecuencia_bases(De),
+  frecuencia_bases(Ga),
+  frecuencia_bases(EM),
+  frecuencia_bases(NLH),
+  frecuencia_bases(NLT),
+  frecuencia_bases(OCM),
+  frecuencia_bases(OC2),
+  frecuencia_bases(H19),
+  frecuencia_bases(C22),
+  frecuencia_bases(HK),
+  frecuencia_bases(NLR),
+  frecuencia_bases(OCS),
+  frecuencia_bases(HNL),
+  frecuencia_bases(MV),
+  frecuencia_bases(Om),
+  frecuencia_bases(SC2),
+  frecuencia_bases(OC4)
+)
+
+rownames(matriz_frecuencias) <- nombres
+
+#Dendrograma
+distancias <- dist(matriz_frecuencias, method = "euclidean")
+arbol <- hclust(distancias, method = "average")
+plot(arbol, main = "Análisis jerárquico global de variantes", xlab = "Variantes",ylab="", yaxt="n", sub = "", cex = 0.8)
+
+# -------------------
+# 4.Referencias bibliográficas
+# -------------------
+# Bibliotecas usadas:
+#------------------------------------
+# APE
+#Paradis, E., Blomberg, S., Bolker, B., Brown, J., Claramunt, S., Claude, J., Cuong, H. S., Desper, R., Didier, G., Durand, B., Dutheil, J., Ewing, R. J., Gascuel, O., Guillerme, T., Heibl, C., Ives, A., Jones, B., Krah, F., Lawson, D., ... de Vienne, D. (2024). ape: Analyses of Phylogenetics and Evolution (Version 5.8-1) [R package]. Comprehensive R Archive Network (CRAN). https://CRAN.R-project.org/package=ape
+#--------------------------------------
+# SEQUINR
+#Charif, D., Clerc, O., Frank, C., Lobry, J. R., Necşulea, A., Palmeira, L., Penel, S., & Perrière, G. (2023). seqinr: Biological Sequences Retrieval and Analysis (Version 4.2-36) [R package]. Comprehensive R Archive Network (CRAN). https://CRAN.R-project.org/package=seqinr
+#-----------------------------------
+#GGPLOT2
+#Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., Yutani, H., Dunnington, D., van den Brand, T., & Posit, PBC. (2025). ggplot2: Create elegant data visualisations using the grammar of graphics (Version 3.5.2) [R package]. Comprehensive R Archive Network (CRAN). https://CRAN.R-project.org/package=ggplot2
