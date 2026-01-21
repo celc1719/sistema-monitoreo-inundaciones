@@ -1,0 +1,50 @@
+p,20181234,Ad Astra,123,Drama
+p,20204567,Parasite,132,Suspenso
+p,20190238,Joker,122,Drama
+p,20211278,Dune,155,Ciencia Ficcion
+p,20173219,La La Land,128,Romance
+p,20162345,Arrival,116,Ciencia Ficcion
+p,20202589,Nobody,92,Accion
+p,20154321,The Revenant,156,Aventura
+p,20183478,Bohemian Rhapsody,134,Biografia
+p,20213456,The French Dispatch,108,Comedia
+p,20194512,Knives Out,130,Misterio
+p,20204444,Tenet,150,Ciencia Ficcion
+p,20211290,The Power of the Dog,127,Western
+p,20195678,1917,119,Guerra
+p,20216789,Don't Look Up,138,Comedia
+p,20227654,The Batman,176,Accion
+p,20171123,Coco,105,Animacion
+p,20208765,Soul,100,Fantasia
+p,20163322,Zootopia,108,Animacion
+p,20219987,The Whale,117,Drama
+p,20178888,Blade Runner 2049,164,Ciencia Ficcion
+p,20234456,Oppenheimer,180,Biografia
+p,20186543,The Shape of Water,123,Fantasia
+p,20223333,Everything Everywhere All at Once,139,Aventura
+p,20192020,Jojo Rabbit,108,Comedia
+c,20110125-S01E01,Winter is coming,62,Drama,Game of Thrones,1
+c,20110125-S01E02,The Kingsroad,56,Drama,Game of Thrones,2
+c,20110125-S01E03,Lord Snow,58,Drama,Game of Thrones,3
+c,20150123-S02E01,The North Remembers,53,Drama,Game of Thrones,1
+c,20150123-S02E02,The Night Lands,54,Drama,Game of Thrones,2
+c,20180912-S01E01,Chapter One: The Vanishing of Will Byers,47,Ciencia Ficcion,Stranger Things,1
+c,20180912-S01E02,Chapter Two: The Weirdo on Maple Street,55,Ciencia Ficcion,Stranger Things,2
+c,20180912-S01E03,Chapter Three: Holly, Jolly,51,Ciencia Ficcion,Stranger Things,3
+c,20202234-S01E01,Welcome to Hawkins,50,Ciencia Ficcion,Stranger Things,1
+c,20173256-S01E01,The Mandalorian,39,Ciencia Ficcion,The Mandalorian,1
+c,20173256-S01E02,The Child,33,Ciencia Ficcion,The Mandalorian,2
+c,20173256-S01E03,The Sin,37,Ciencia Ficcion,The Mandalorian,3
+c,20190222-S01E01,Pilot,42,Comedia,The Good Place,1
+c,20190222-S01E02,Flying,22,Comedia,The Good Place,2
+c,20190222-S01E03,Tahani Al-Jamil,22,Comedia,The Good Place,3
+c,20201010-S01E01,Out of the Past,58,Drama,The Queen's Gambit,1
+c,20201010-S01E02,Exchanges,49,Drama,The Queen's Gambit,2
+c,20201010-S01E03,Doubled Pawns,46,Drama,The Queen's Gambit,3
+c,20165555-S01E01,Nosedive,63,Ciencia Ficcion,Black Mirror,1
+c,20165555-S01E02,Playtest,58,Ciencia Ficcion,Black Mirror,2
+c,20165555-S01E03,Shut Up and Dance,52,Ciencia Ficcion,Black Mirror,3
+c,20239999-S01E01,Pilot,44,Comedia,Ted Lasso,1
+c,20239999-S01E02,Biscuits,38,Comedia,Ted Lasso,2
+c,20239999-S01E03,Trent Crimm: The Independent,35,Comedia,Ted Lasso,3
+c,20241111-S01E01,The Beginning,57,Accion,Reacher,1
